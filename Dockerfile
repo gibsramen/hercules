@@ -7,4 +7,4 @@ RUN apt-get update && \
 RUN . .venv/bin/activate && \
     pip3 install maturin==1.5.1 && \
     maturin develop
-ENTRYPOINT ["entrypoint.sh"]
+ENV PATH=/hercules/.venv/bin:$PATH
