@@ -1,4 +1,4 @@
-FROM rust
+FROM rust:latest
 COPY . /hercules
 WORKDIR /hercules
 RUN apt-get update && \
@@ -7,3 +7,4 @@ RUN apt-get update && \
 RUN . .venv/bin/activate && \
     pip3 install maturin==1.5.1 && \
     maturin develop
+ENTRYPOINT ["entrypoint.sh"]
